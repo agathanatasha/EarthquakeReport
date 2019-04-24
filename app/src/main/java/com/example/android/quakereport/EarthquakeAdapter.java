@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -108,12 +109,12 @@ public class EarthquakeAdapter extends ArrayAdapter {
     }
 
     private String formatDate(Date timeInMS) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(datePattern);
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
         return dateFormat.format(timeInMS);
     }
 
     private String formatTime(Date timeInMS) {
-        SimpleDateFormat timeFormat = new SimpleDateFormat(timePattern);
+        DateFormat timeFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
         return timeFormat.format(timeInMS);
     }
 
